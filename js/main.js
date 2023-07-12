@@ -55,7 +55,7 @@ function verificaBomb(bombRandomArray) {
                 console.log(randomBomb);
 
                 if (randomBomb === (i + 1)) {
-                    listaSquare[i].classList.toggle("bg-warning", "");
+                    listaSquare[i].classList.toggle("bg-warning");
 
                     console.log("hai preso una bomba", + randomBomb);
                     break;
