@@ -1,4 +1,6 @@
 const button = document.getElementById("button");
+let play = true;
+const overlay = document.getElementById("overlay");
 
 button.addEventListener("click", function () {
 
@@ -8,8 +10,7 @@ button.addEventListener("click", function () {
     const arrayBomb = createBomb();
     verificaBomb(arrayBomb);
 
-    
-
+    play = true;
 
 })
 
@@ -34,7 +35,7 @@ function createBomb() {
     }
 
     console.log(arrayBomb);
-    
+
     return arrayBomb;
 }
 
@@ -51,6 +52,8 @@ function verificaBomb(bombRandomArray) {
 
 
             listaSquare[i].classList.toggle("bg-success");
+            play = true;
+
 
             for (let j = 0; j < bombRandomArray.length; j++) {
                 const randomBomb = bombRandomArray[j];
@@ -59,11 +62,21 @@ function verificaBomb(bombRandomArray) {
                 if (randomBomb === (i + 1)) {
                     listaSquare[i].classList.toggle("bg-warning");
                     listaSquare[i].innerHTML = `<i class="fa-solid fa-bomb"></i>`;
+                    listaSquare[i].style;
 
                     console.log("hai preso una bomba", + randomBomb);
-                    break;
+                    play = false;
+                    
+                    if (play === false) {
+                    //    return
+                        alert("hai preso una bomba");
+                    }
+
                 }
+
             }
+
+
 
         })
     }
@@ -99,10 +112,10 @@ function createSinglesquare() {
 
     }
 
-    
-// containerGrid.append(listaSquare);
 
-// return square
+    // containerGrid.append(listaSquare);
+
+    // return square
 }
 
 
