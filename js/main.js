@@ -7,7 +7,9 @@ button.addEventListener("click", function () {
     createSinglesquare();
     const arrayBomb = createBomb();
     verificaBomb(arrayBomb);
-    play = true;
+
+    
+
 
 })
 
@@ -32,7 +34,7 @@ function createBomb() {
     }
 
     console.log(arrayBomb);
-
+    
     return arrayBomb;
 }
 
@@ -56,6 +58,7 @@ function verificaBomb(bombRandomArray) {
 
                 if (randomBomb === (i + 1)) {
                     listaSquare[i].classList.toggle("bg-warning");
+                    listaSquare[i].innerHTML = `<i class="fa-solid fa-bomb"></i>`;
 
                     console.log("hai preso una bomba", + randomBomb);
                     break;
